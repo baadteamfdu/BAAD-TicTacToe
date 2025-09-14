@@ -3,8 +3,9 @@ using namespace std;
 
 class Player {
 public:
-    void getMove(int row, int col);
-    void getPlayerIcon();
+    void getMove(int& row, int& column);
+    char getPlayerIcon();
+    void setIcon(char i);
 private:
     char icon;
 };
