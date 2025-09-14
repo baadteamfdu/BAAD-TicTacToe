@@ -5,13 +5,26 @@ using namespace std;
 
 int main()
 {
-	cout << "Instructions: ";
+	cout << "Instructions: " << endl;
 	//we could just alternate from x then o and just say in a cout set of instructions that the player going first is x and then it is o.
-	// Then instead of a player we could just make an input handler that checks for 1-9?
 	//for reseting we could just say who's turn it is and say that the loser goes first then in the documentation/instructions
 	Board board;
 	board.printBoard();
+    Player player1;
+    Player player2;
+    player1.setIcon('x');
+    player2.setIcon('o');
 
+    cout << "Player 1 " << player1.getPlayerIcon() << "'s turn:" << endl;
+    int* move1 = player1.getMove();
+    cout << "Player 2 " << player2.getPlayerIcon() << "'s turn:" << endl;
+    int* move2 = player2.getMove();
+
+	delete[] move1;
+    delete[] move2;
+
+    return 0;
+}
 
 	/*
 	main
@@ -60,7 +73,3 @@ We are gonna have to make cells that is gonna hold the value
  Could be either X OR O OR  ' '
 
 			*/
-
-
-
-}

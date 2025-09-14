@@ -13,21 +13,21 @@ char Player::getPlayerIcon()
 
 int* Player::getMove()
 {
-	int* Move = new int[2];
+	int* move = new int[2];
 	do {
-		cout << "what will your row be from 1 to 3" << endl;
-		cin >> Move[0];
-		if (Move[0] < 1 || Move[0] > 3) {
+		cout << "What will your row be (1 to 3)? " << endl;
+		cin >> move[0];
+		if (move[0] < 1 || move[0] > 3) {
 			cout << "ERROR ::: ROW DOES NOT EXIST. PLEASE CHOOSE ROW FROM 1 TO 3" << endl;
 		}
-	} while (Move[0] < 1 || Move[0] > 3);
+	} while (move[0] < 1 || move[0] > 3);
 	do {
-		cout << "what will your column be from 1 to 3" << endl;
-		cin >> Move[1];
-		if (Move[1] < 1 || Move[1] > 3) {
+		cout << "What will your column be (1 to 3)? " << endl;
+		cin >> move[1];
+		if (move[1] < 1 || move[1] > 3) {
 			cout << "ERROR ::: ROW DOES NOT EXIST. PLEASE CHOOSE ROW FROM 1 TO 3" << endl;
 		}
-	} while (Move[1] < 1 || Move[1] > 3);
+	} while (move[1] < 1 || move[1] > 3);
 
-	return Move;
+	return move;
 }
