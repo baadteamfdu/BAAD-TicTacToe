@@ -3,7 +3,7 @@ using namespace std;
 
 class Player {
 public:
-    void getMove(int& row, int& column);
+    int* getMove();
     char getPlayerIcon();
     void setIcon(char i);
 private:

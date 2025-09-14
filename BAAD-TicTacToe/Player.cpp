@@ -11,23 +11,23 @@ char Player::getPlayerIcon()
 	return icon;
 }
 
-//askig for the row and column, 
-//changing the variables that were passed through refereneces therefore,
-//we need to create variables row and column in the main so we can use them
-void Player::getMove(int& row, int& column)
+int* Player::getMove()
 {
+	int* Move = new int[2];
 	do {
 		cout << "what will your row be from 1 to 3" << endl;
-		cin >> row;
-		if (row < 1 || row > 3) {
+		cin >> Move[0];
+		if (Move[0] < 1 || Move[0] > 3) {
 			cout << "ERROR ::: ROW DOES NOT EXIST. PLEASE CHOOSE ROW FROM 1 TO 3" << endl;
 		}
-	} while (row < 1 && row > 3);
+	} while (Move[0] < 1 || Move[0] > 3);
 	do {
 		cout << "what will your column be from 1 to 3" << endl;
-		cin >> column;
-		if (column < 1 && column > 3) {
+		cin >> Move[1];
+		if (Move[1] < 1 || Move[1] > 3) {
 			cout << "ERROR ::: ROW DOES NOT EXIST. PLEASE CHOOSE ROW FROM 1 TO 3" << endl;
 		}
-	} while (column < 1 && column > 3);
+	} while (Move[1] < 1 || Move[1] > 3);
+
+	return Move;
 }
