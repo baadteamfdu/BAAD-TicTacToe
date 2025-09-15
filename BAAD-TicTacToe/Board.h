@@ -4,8 +4,9 @@ using namespace std;
 class Board {
     public:
         void reset();
-        void checkWin(); //could mention if draw occurs based on turn number
-        void getBoxIcon(int row, int col);
+        bool checkWin();
+        bool checkDraw();
+        char getBoxIcon(int row, int col);
         void setBoxIcon(int row, int col, char icon);
         void printBoard();
     private:

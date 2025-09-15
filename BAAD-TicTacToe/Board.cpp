@@ -24,3 +24,21 @@ void Board::printBoard()
         cout << endl;
     }
 }
+
+bool Board::checkDraw() {
+    if (turns >= 9) {
+        return true;        //might need changing based on the implementation of others to be 8 or 10
+    }
+    else {
+        return false;
+    }
+}
+
+char Board::getBoxIcon(int row, int col) {
+    return boardArray[row - 1][col - 1];
+}
+
+void Board::setBoxIcon(int row, int col, char icon) {
+    boardArray[row-1][col-1] = icon;
+    turns++;
+}

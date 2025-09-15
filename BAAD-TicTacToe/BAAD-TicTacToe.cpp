@@ -17,9 +17,14 @@ int main()
 
     cout << "Player 1 " << player1.getPlayerIcon() << "'s turn:" << endl;
     int* move1 = player1.getMove();
+	if (board.getBoxIcon(move1[0], move1[1]) != ' ') {
+		cout << "ERROR ::: BOARD SPOT TAKEN"; //add something to loop here
+	}
     cout << "Player 2 " << player2.getPlayerIcon() << "'s turn:" << endl;
     int* move2 = player2.getMove();
-
+	if (board.getBoxIcon(move2[0], move2[1]) != ' ') {
+		cout << "ERROR ::: BOARD SPOT TAKEN"; //add something to loop here
+	}
 	delete[] move1;
     delete[] move2;
 
