@@ -21,8 +21,8 @@ int* Player::getMove() {
 		cout << "What will your row be (1 to 3)? " << endl;
 		cin >> input;
 		try {
-			moveValid = stoi(input);
-			if (moveValid < 1 || moveValid > 3) {
+			moveValid = stoi(input); //tries to convert the string input to a integer, if this fails the catch block triggers.
+			if (moveValid < 1 || moveValid > 3) { //bounds checks
 				cout << "ERROR ::: ROW DOES NOT EXIST. PLEASE CHOOSE ROW FROM 1 TO 3" << endl;
 			}
 			else {
@@ -39,8 +39,8 @@ int* Player::getMove() {
 		cout << "What will your column be (1 to 3)? " << endl;
 		cin >> input;
 		try {
-			moveValid = stoi(input);
-			if (moveValid < 1 || moveValid > 3) {
+			moveValid = stoi(input); //tries to convert the string input to a integer, if this fails the catch block triggers.
+			if (moveValid < 1 || moveValid > 3) { //bounds checks
 				cout << "ERROR ::: COLUMN DOES NOT EXIST. PLEASE CHOOSE COLUMN FROM 1 TO 3" << endl;
 			}
 			else {

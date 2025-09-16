@@ -7,7 +7,7 @@ Board::Board() {
 }
 
 void Board::reset() {
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) { ;//sets every row and column to blank and sets the turn counter back to zero
         for (int j = 0; j < 3; j++) {
             boardArray[i][j] = ' ';
         }
@@ -28,7 +28,7 @@ void Board::printBoard() {
     cout << endl;
 }
 
-bool Board::checkDraw() {
+bool Board::checkDraw() { //the board must be full after 9 turns so it will return true then
     if (turns >= 9) {
         return true;        
     }
@@ -41,7 +41,7 @@ bool Board::checkDraw() {
 
 bool Board::checkWin(char player) {
     
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) { //checks all combinations of three across or down
         if (boardArray[i][0] == player &&
             boardArray[i][1] == player &&
             boardArray[i][2] == player) return true;
@@ -64,10 +64,10 @@ bool Board::checkWin(char player) {
 }
 
 char Board::getBoxIcon(int row, int col) {
-    return boardArray[row - 1][col - 1];
+    return boardArray[row - 1][col - 1]; //returns box icon because player input 1-3
 }
 
 void Board::setBoxIcon(int row, int col, char icon) {
-            boardArray[row - 1][col - 1] = icon;
-            turns++;
+            boardArray[row - 1][col - 1] = icon; //sets the box icon to whatever is passed and -1 is used because player inputs 1-3
+            turns++; //increments turn counter
         }
