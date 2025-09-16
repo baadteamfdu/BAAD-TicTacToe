@@ -67,13 +67,7 @@ char Board::getBoxIcon(int row, int col) {
     return boardArray[row - 1][col - 1];
 }
 
-bool Board::setBoxIcon(int row, int col, char icon) {
-    if (row >= 1 && row <= 3 && col >= 1 && col <= 3) {
-        if (boardArray[row - 1][col - 1] == ' ') {
+void Board::setBoxIcon(int row, int col, char icon) {
             boardArray[row - 1][col - 1] = icon;
             turns++;
-            return true;
         }
-    }
-    return false; 
-}

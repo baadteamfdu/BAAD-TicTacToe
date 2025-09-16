@@ -12,7 +12,7 @@ private:
         bool checkDraw();
         bool checkWin(char player);
         char getBoxIcon(int row, int col);
-        bool setBoxIcon(int row, int col, char icon);
+        void setBoxIcon(int row, int col, char icon);
         
  
 
