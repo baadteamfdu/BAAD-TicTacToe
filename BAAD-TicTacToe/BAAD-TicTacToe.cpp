@@ -6,11 +6,11 @@ using namespace std;
 int main()
 {
 	cout << "Instructions: " << endl;
-	cout << "The player going first uses 'x', and the second uses 'o'";
-	cout << "When it is your turn, enter which ROW and COLUMN you would like to select(numbers 1-3)";
-	cout << "You CANNOT play on a spot that is already taken, otherwise you will be asked again!";
-	cout << "First to 3 in a row wins! If the board has no winner, it is a draw!";
-	cout << "Loser goes first if you play again! Good luck!";
+	cout << "The player going first uses 'x', and the second uses 'o'" << endl;
+	cout << "When it is your turn, enter which ROW and COLUMN you would like to select(numbers 1-3)" << endl;
+	cout << "You CANNOT play on a spot that is already taken, otherwise you will be asked again!" << endl;
+	cout << "First to 3 in a row wins! If the board has no winner, it is a draw!" << endl;
+	cout << "Loser goes first if you play again! Good luck!" << endl;
 
 	Board board;
 	board.printBoard();
@@ -21,7 +21,7 @@ int main()
 
 	cout << "Player 1 " << player1.getPlayerIcon() << "'s turn:" << endl;
 	int* move1 = player1.getMove();
-	while (board.getBoxIcon(move1[0], move1[1]) != ' ');
+	while (board.getBoxIcon(move1[0], move1[1]) != ' ')
 	{
 		cout << "ERROR ::: BOARD SPOT TAKEN. Try again.";
 		delete[] move1;
@@ -30,9 +30,11 @@ int main()
 	board.setBoxIcon(move1[0], move1[1], player1.getPlayerIcon());
 	delete[] move1;
 
+	board.printBoard();
+
 	cout << "Player 2 " << player1.getPlayerIcon() << "'s turn:" << endl;
 	int* move2 = player2.getMove();
-	while (board.getBoxIcon(move2[0], move2[1]) != ' ');
+	while (board.getBoxIcon(move2[0], move2[1]) != ' ')
 	{
 		cout << "ERROR ::: BOARD SPOT TAKEN. Try again.";
 		delete[] move2;
@@ -40,6 +42,8 @@ int main()
 	}
 	board.setBoxIcon(move2[0], move2[1], player2.getPlayerIcon());
 	delete[] move2;
+
+	board.printBoard();
 }
 
 	/*
